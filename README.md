@@ -62,7 +62,6 @@ sudo apt install curl
 
 ```
 echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
-
 ```
 ![image](https://github.com/martinsRossi/instalacao-mongodb/assets/101609697/9475c3a4-3966-4660-bd33-282a92bae5da)
 
