@@ -29,8 +29,7 @@ Em vez de relações tabulares rígidas, o MongoDB é construído sobre um model
 
 Algumas caracteristicas do MongoDB são: modelo de documento declarativo, os esquemas dinâmicos e recursos de escalabilidade nativa. Isso torna-o um banco muito amigável com o desenvolvimento ágil por não ter muitas restrições (schemaless).
 
-<p id="instalacao"></p>
-<h2>Passo 1: Instale o MongoDB no Ubuntu 22.04</h1> 
+<p id="instalacao"><h2>Passo 1: Instale o MongoDB no Ubuntu 22.04</h1> </p>
 
 Depois de concluir estas etapas a seguir, você poderá instalar e configurar o MongoDB em seu sistema Ubuntu 22.04. As duas primeiras etapas orientam você no processo de instalação. As etapas restantes detalham como criar um banco de dados e usuários do banco de dados, proteger o servidor de banco de dados, configurar o acesso remoto e trabalhar com o banco de dados MongoDB.
 
