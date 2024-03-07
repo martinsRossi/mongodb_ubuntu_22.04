@@ -1,4 +1,4 @@
-# Instalção do Mongodb no Ubuntu 22.04
+# Instalção do MongoDB no Ubuntu 22.04
 
 Guia para instalar o MongoDB em Linux Ubuntu em 7 passos.
 
