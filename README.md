@@ -18,9 +18,7 @@ Este repositório tem como propósito de ajudar a instalar o MongoDB na versão 
 - <a href="#trabalhando">Trabalhando com banco de dados MongoDB</a>
 
 
-<p id="intro"></p>
-
-## Introdução ao MongoDB
+<p id="intro"><h2>Introdução ao MongoDB</h2></p>
 
 ### O que é o MongoDB?
 O desenvolvimento de aplicativos escalonáveis e de alto desempenho fez uso extensivo do MongoDB, um banco <a href="https://www.pcperformance.com.br/glossario/o-que-e-cross-platform/">cross-plataform</a> e de código aberto. Em termos de modelagem e organização de dados, o MongoDB é diferente dos bancos de dados SQL convencionais.
@@ -83,9 +81,8 @@ sudo apt install mongodb-org -y
 
 Isso lista um monte de informações, incluindo a versão, Git e versão OPenSSL, entre outros detalhes.
 
-<p id="servico"></p>
+<p id="servico"><h2>Passo 2: Inciando e habilitando o serviço do MongoDB</h2></p>
 
-## Passo 2: Inciando e habilitando o serviço do MongoDB
 ### 1) O serviço MongoDB é desabilitado na instalação por padrão e você pode verificar isso executando o comando abaixo:
 ```
 sudo systemctl status mongod
