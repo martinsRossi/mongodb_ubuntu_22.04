@@ -70,7 +70,6 @@ echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gp
 
 ```
 sudo apt update
-
 ```
 O comando atualiza os repositórios locais e informa o Ubuntu sobre o repositório MongoDB 7.0 recém-adicionado.
 
