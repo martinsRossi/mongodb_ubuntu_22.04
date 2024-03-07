@@ -32,54 +32,81 @@ Algumas caracteristicas do MongoDB são: modelo de documento declarativo, os esq
 ## 
 
 <p id="instalacao"></p>
+
 ## Instalação do MongoDB em Ubuntu 22.04
 Depois de concluir estas etapas a seguir, você pode instalar e configurar o MongoDB em seu sistema Ubuntu 22.04. As duas primeiras etapas orientam você no processo de instalação. As etapas restantes detalham como criar um banco de dados e usuários do banco de dados, proteger o servidor de banco de dados, configurar o acesso remoto e trabalhar com o banco de dados MongoDB.
 
 ### Passo 1: Instale o MongoDB no Ubuntu 22.04
 
-A primeira etapa é instalar os pacotes de pré-requisitos necessários durante a instalação. Para fazer isso, execute o seguinte comando:
-
-<code class="language-bash"> sudo apt install software-properties-common gnupg apt-transport-https ca-certificates -y</code>
-
-Para instalar o pacote MongoDB mais recente, você precisa adicionar o repositório do pacote MongoDB ao arquivo de lista de fontes no Ubuntu. Antes disso, você precisa importar a chave pública do MongoDB em seu sistema usando o comando wget da seguinte forma:
+#### 1) A primeira etapa é instalar os pacotes de pré-requisitos necessários durante a instalação. Para fazer isso, execute o seguinte comando:
+```
+sudo apt install software-properties-common gnupg apt-transport-https ca-certificates -y
+```
+#### 2) Para instalar o pacote MongoDB mais recente, você precisa adicionar o repositório do pacote MongoDB ao arquivo de lista de fontes no Ubuntu. Antes disso, você precisa importar a chave pública do MongoDB em seu sistema usando o comando wget da seguinte forma:
 
 ```
 curl -fsSL https://pgp.mongodb.com/server-7.0.asc |  sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
 ```
-Caso o curl não esteja instalado, rode:
+##### 2.1) Caso o curl não esteja instalado, rode:
 
 ```
+sudo apt update
+sudo apt upgrade
 ```
-
-
-```
-```
-
+Por fim, rode:
 
 ```
+sudo apt install curl
 ```
-
-
-```
-```
-
+#### 3) Em seguida, adicione o repositório MongoDB 7.0 APT ao diretório /etc/apt/sources.list.d.
 
 ```
-```
+echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
 
+```
+![image](https://github.com/martinsRossi/instalacao-mongodb/assets/101609697/9475c3a4-3966-4660-bd33-282a92bae5da)
+
+#### 4) Depois que o repositório for adicionado, recarregue o índice do pacote local.
+
+```
+sudo apt update
+
+```
+O comando atualiza os repositórios locais e informa o Ubuntu sobre o repositório MongoDB 7.0 recém-adicionado.
+
+#### 5) Com isso resolvido, instale o metapacote mongodb-org que fornece o MongoDB.
+
+```
+sudo apt install mongodb-org -y
+```
+![image](https://github.com/martinsRossi/instalacao-mongodb/assets/101609697/9571a1d7-56e7-41e7-bebd-e522c82fdae1)
+
+#### 6) O comando instala o servidor de banco de dados MongoDB junto com os componentes principais do banco de dados, incluindo as ferramentas shell. Assim que a instalação for concluída, verifique a versão do MongoDB instalada:
+
+```
+ mongod --version
+```
+![image](https://github.com/martinsRossi/instalacao-mongodb/assets/101609697/9ef7d599-aa97-4428-ada3-27c2e62b3ede)
+
+Isso lista um monte de informações, incluindo a versão, Git e versão OPenSSL, entre outros detalhes.
 
 
 <p id="servico"></p>
+
 ## Inciando e habilitando o serviço do MongoDB
 
 <p id="database"></p>
+
 ## Criando um banco de dados e usuário em MongoDB
 
 <p id="parametros"></p>
+
 ## Ajustando parâmetros de Segurança do MongoDB em Ubuntu
 
 <p id="remote"></p>
+
 ## Configurando MongoDB para acesso remoto
 
 <p id="trabalhando"></p>
+
 ## Trabalhando com banco de dados MongoDB
