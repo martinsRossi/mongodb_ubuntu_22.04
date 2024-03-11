@@ -9,13 +9,13 @@ Este repositório tem como propósito de ajudar a instalar o MongoDB na versão 
 - **-->
 
 ## Índice
-- <a href="#intro">Introdução ao MongoDB</a>
-- <a href="#instalacao">Instalação do MongoDB em Ubuntu 22.04</a>
-- <a href="#servico">Inciando e habilitando o serviço do MongoDB</a>
-- <a href="#database">Criando um banco de dados e usuário em MongoDB</a>
-- <a href="#parametros">Ajustando parâmetros de Segurança do MongoDB em Ubuntu</a>
-- <a href="#remote">Configurando MongoDB para acesso remoto</a>
-- <a href="#trabalhando">Trabalhando com banco de dados MongoDB</a>
+- [x] <a href="#intro">Introdução ao MongoDB</a>
+- [x] <a href="#instalacao">Instalação do MongoDB em Ubuntu 22.04</a>
+- [] <a href="#servico">Inciando e habilitando o serviço do MongoDB</a>
+- [] <a href="#database">Criando um banco de dados e usuário em MongoDB</a>
+- [] <a href="#parametros">Ajustando parâmetros de Segurança do MongoDB em Ubuntu</a>
+- [] <a href="#remote">Configurando MongoDB para acesso remoto</a>
+- [] <a href="#trabalhando">Trabalhando com banco de dados MongoDB</a>
 
 
 <p id="intro"><h2>Introdução ao MongoDB</h2></p>
