@@ -180,7 +180,6 @@ db.digimons.insertOne({
         "velocidade": 25
     }
 })
-
 ```
 
 ### 3) Se queremos adicionar mais de um usamos o comando <code>insertMany</code>:
