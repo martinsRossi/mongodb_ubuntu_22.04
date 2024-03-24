@@ -157,7 +157,6 @@ show dbs
 
 ```
 use digimon_database
-
 ```
 
 <p id="tabela"><h2>Passo 4: Criando e adicionando em tabelas no MongoDB</h2></p>
