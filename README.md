@@ -35,6 +35,29 @@ Depois de concluir estas etapas a seguir, você poderá instalar e configurar o 
 ```
 sudo apt install software-properties-common gnupg apt-transport-https ca-certificates -y
 ```
+#### 1.1) Caso apareça este erro:
+
+![image](https://github.com/martinsRossi/mongodb_ubuntu_22.04/assets/101609697/b49b2c9b-7397-4ef9-9576-b464f04bf6f7)
+
+Execute:
+
+```
+su
+```
+Coloque sua senha. Após isso, digite:
+
+```
+sudo nando /etc/sudoers
+```
+Logo abaixo de %sudo ALL =(ALL:ALL) ALL, acrescente:
+
+```
+vboxuser ALL =(ALL:ALL) ALL
+```
+Ctrl + O (Salvar) - Enter
+Ctrl + X (Fechar)
+Ctrl + D (Sair modo root)
+
 ### 2) Para instalar o pacote MongoDB mais recente, você precisa adicionar o repositório do pacote MongoDB ao arquivo de lista de fontes no Ubuntu. Antes disso, você precisa importar a chave pública do MongoDB em seu sistema usando o comando wget da seguinte forma:
 
 ```
