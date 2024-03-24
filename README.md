@@ -12,7 +12,7 @@ Este repositório tem como propósito de ajudar a instalar o MongoDB na versão 
 - [x] <a href="#intro">Introdução ao MongoDB</a>
 - [x] <a href="#instalacao">Instalação do MongoDB em Ubuntu 22.04</a>
 - <a href="#servico">Inciando e habilitando o serviço do MongoDB</a>
-- <a href="#database">Criando um banco de dados e usuário em MongoDB</a>
+- <a href="#criacao">Criando um banco de dados e usuário em MongoDB</a>
 - <a href="#parametros">Ajustando parâmetros de Segurança do MongoDB em Ubuntu</a>
 - <a href="#remote">Configurando MongoDB para acesso remoto</a>
 - <a href="#trabalhando">Trabalhando com banco de dados MongoDB</a>
@@ -139,6 +139,106 @@ sudo systemctl enable mongod
 ![image](https://github.com/martinsRossi/mongodb-ubuntu-22.04/assets/101609697/693d44b1-33e1-4471-9027-53f34fa8287f)
 ### Até agora, o MongoDB foi instalado e configurado com sucesso para iniciar na inicialização.
 
+<p id="criacao"><h2>Passo 3: Criando um banco de dados em MongoDB</h2></p>
+
+### 1) Para iniciar o banco, digite:
+
+```
+mongosh
+```
+
+### 2) Para verificar os bancos de dados já existentes, digite:
+
+```
+show dbs
+```
+
+### 3) Para criar um banco, digite <code>use</code> e o nome do banco. Para nosso exemplo, iremos criar um banco de dados do Digimom.
+
+```
+use digimon_database
+
+```
+
+<p id="tabela"><h2>Passo 4: Criando e adicionando em tabelas no MongoDB</h2></p>
+
+### 1) Para criação de uma tabela, com inserção de dados, inserimos:
+
+```
+db.createCollection("digimons")
+```
+
+### 2) Nós adicionaremos este Digimom com este comando:
+```
+db.digimons.insertOne({
+    "nome": "Agumon",
+    "tipo": "Reptile",
+    "nivel": "Rookie",
+    "ataques": ["Pepper Breath", "Claw Attack"],
+    "atributos": {
+        "ataque": 40,
+        "defesa": 30,
+        "velocidade": 25
+    }
+})
+
+```
+
+### 3) Se queremos adicionar mais de um usamos o comando <code>insertMany</code>:
+
+```
+db.digimons.insertMany([
+    {
+        "nome": "Gabumon",
+        "tipo": "Reptile",
+        "nivel": "Rookie",
+        "ataques": ["Blue Blaster", "Horn Attack"],
+        "atributos": {
+            "ataque": 35,
+            "defesa": 30,
+            "velocidade": 20
+        }
+    },
+    {
+        "nome": "Palmon",
+        "tipo": "Vegetation",
+        "nivel": "Rookie",
+        "ataques": ["Poison Ivy", "Root Bind"],
+        "atributos": {
+            "ataque": 30,
+            "defesa": 25,
+            "velocidade": 20
+        }
+    }
+])
+```
+### 4) Tipos de consultas
+
+#### 4.1) Para consultarmos o primeiro que criamos, usamos:
+
+```
+db.digimons.findOne()
+```
+
+#### 4.2) Afim de consultar todos, usamos:
+
+```db.digimons.find()```
+
+#### 4.3) Consulta com filtro Menor que (qualquer campo):
+
+```db.digimons.find({"atributos.ataque": {$lt: 40}})```
+
+#### 4.4) Consulta com filtro Maior que e Menor que:
+
+```db.digimons.find({"atributos.defesa": {$gt: 25, $lt: 35}})```
+
+### 5) Se quisermos saber quantos registros foram adicionados, digitamos:
+
+```db.digimons.count()```
+
+### 6) Consulta com contagem com algum filtro de registros na tabela:
+
+```db.digimons.count({"tipo": "Reptile"})```
 
 <!--
 <p id="database"></p>
