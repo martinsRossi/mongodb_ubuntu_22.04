@@ -220,23 +220,33 @@ db.digimons.findOne()
 
 #### 4.2) Afim de consultar todos, usamos:
 
-```db.digimons.find()```
+```
+db.digimons.find()
+```
 
 #### 4.3) Consulta com filtro Menor que (qualquer campo):
 
-```db.digimons.find({"atributos.ataque": {$lt: 40}})```
+```
+db.digimons.find({"atributos.ataque": {$lt: 40}})
+```
 
 #### 4.4) Consulta com filtro Maior que e Menor que:
 
-```db.digimons.find({"atributos.defesa": {$gt: 25, $lt: 35}})```
+```
+db.digimons.find({"atributos.defesa": {$gt: 25, $lt: 35}})
+```
 
 ### 5) Se quisermos saber quantos registros foram adicionados, digitamos:
 
-```db.digimons.count()```
+```
+db.digimons.count()
+```
 
 ### 6) Consulta com contagem com algum filtro de registros na tabela:
 
-```db.digimons.count({"tipo": "Reptile"})```
+```
+db.digimons.count({"tipo": "Reptile"})
+```
 
 <!--
 <p id="database"></p>
