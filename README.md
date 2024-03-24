@@ -47,7 +47,7 @@ su
 Coloque sua senha. Após isso, digite:
 
 ```
-sudo nando /etc/sudoers
+sudo nano /etc/sudoers
 ```
 Logo abaixo de %sudo ALL =(ALL:ALL) ALL, acrescente:
 
