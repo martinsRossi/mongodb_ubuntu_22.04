@@ -161,91 +161,91 @@ use digimon_database
 
 <p id="tabela"><h2>Passo 4: Criando e adicionando em tabelas no MongoDB</h2></p>
 
-### 1) Para criação de uma tabela, com inserção de dados, inserimos:
+#### 1) Para criação de uma tabela, com inserção de dados, inserimos:
+
+
 
 ```
-db.createCollection("digimons")
+db.createCollection("pokemon")
 ```
 
 ### 2) Nós adicionaremos este Digimom com este comando:
 ```
-db.digimons.insertOne({
-    "nome": "Agumon",
-    "tipo": "Reptile",
-    "nivel": "Rookie",
-    "ataques": ["Pepper Breath", "Claw Attack"],
+db.pokemon.insertOne({
+    "nome": "Pikachu",
+    "tipo": "Elétrico",
+    "habilidades": ["Choque do Trovão", "Investida"],
     "atributos": {
-        "ataque": 40,
-        "defesa": 30,
-        "velocidade": 25
+        "ataque": 55,
+        "defesa": 40,
+        "velocidade": 90
     }
 })
+
 ```
 
 ### 3) Se queremos adicionar mais de um usamos o comando <code>insertMany</code>:
 
 ```
-db.digimons.insertMany([
-    {
-        "nome": "Gabumon",
-        "tipo": "Reptile",
-        "nivel": "Rookie",
-        "ataques": ["Blue Blaster", "Horn Attack"],
+db.pokemon.insertMany([{
+        "nome": "Bulbasaur",
+        "tipo": "Planta",
+        "habilidades": ["Chicote de Vinha", "Raio Solar"],
         "atributos": {
-            "ataque": 35,
-            "defesa": 30,
-            "velocidade": 20
+        "ataque": 49,
+        "defesa": 49,
+        "velocidade": 45
         }
     },
     {
-        "nome": "Palmon",
-        "tipo": "Vegetation",
-        "nivel": "Rookie",
-        "ataques": ["Poison Ivy", "Root Bind"],
+        "nome": "Charmander",
+        "tipo": "Fogo",
+        "habilidades": ["Lança-Chamas", "Garra de Metal"],
         "atributos": {
-            "ataque": 30,
-            "defesa": 25,
-            "velocidade": 20
+            "ataque": 52,
+            "defesa": 43,
+            "velocidade": 65
         }
     }
 ])
+
 ```
 ### 4) Tipos de consultas
 
 #### 4.1) Para consultarmos o primeiro que criamos, usamos:
 
 ```
-db.digimons.findOne()
+db.pokemon.findOne()
 ```
 
 #### 4.2) Afim de consultar todos, usamos:
 
 ```
-db.digimons.find()
+db.pokemon.find()
 ```
 
 #### 4.3) Consulta com filtro Menor que (qualquer campo):
 
 ```
-db.digimons.find({"atributos.ataque": {$lt: 40}})
+db.pokemon.find({"atributos.ataque": {$lt: 50}})
 ```
 
 #### 4.4) Consulta com filtro Maior que e Menor que:
 
 ```
-db.digimons.find({"atributos.defesa": {$gt: 25, $lt: 35}})
+db.pokemon.find({"atributos.defesa": {$gt: 40, $lt: 50}})
 ```
 
 ### 5) Se quisermos saber quantos registros foram adicionados, digitamos:
 
 ```
-db.digimons.count()
+db.pokemon.count()
 ```
 
 ### 6) Consulta com contagem com algum filtro de registros na tabela:
 
 ```
-db.digimons.count({"tipo": "Reptile"})
+db.pokemon.count({"tipo": "Fogo"})
 ```
 
 <!--
